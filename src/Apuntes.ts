@@ -317,3 +317,63 @@ print({ id: "user_id" })
 //import { Point } from './Archivouno'
 //
 //const point = new Point(1,2)
+
+//React & TypeScript 
+
+//Pirmero de todo veremos como crear un proyecto con React y typescript a la vez 
+//Debemos poner en consola el siguiente codigo:
+//npx create-react-app -"nombredelproyecto-react --template typescript"
+
+//Ahora para componetizar elementos "como por ejemplo botones formularios etc" en react con typescript se hace de la siguiente forma:\\
+
+//Creamos el componente en la carpeta componentes
+
+//import {MouseEventHandler , ReactNode} from "react"
+
+//interface ButtonProps { //Importante aqui darse cuenta que el nombre de la interfaz es buena practica ponerle de nombre el nombre del componente seguido de "Props"\\
+//children: reactNode,
+//}
+
+//export default function Button({ children }: ButtonProps ) {
+//return(
+//<button onClick={} className= "button color-red"> {children} </button>    
+//) 
+//}
+
+//En el ejemplo anteriror estamos creando un componente boton que usa la propiedad children pero como typescript siempre nos pide una serie de requisitos para saber que informacion  
+// manejamos pues necesitamos crear una interfaz para poder usar la propiedad children en esta funcion 
+
+//useState\\
+
+//type UserFormState = {
+//name : string,
+//lastname: string
+//}
+
+//const initialValue: UserFormState = {
+//name: "",
+//lastname: "",
+//}
+
+//export default function UserForm() {
+//const [form, setForm] = useState(initialValue) "Ahora mismo initialValue es name y lastname con un string vacio"
+//}
+
+//Decoradores en TypeScript\\
+//Los decoradores nos permiten alterar dinámicamente la funcionalidad o añadir nuevas responsabilidades a un objeto a nivel de clase, propiedad, 
+//método o parámetro 
+//Decoradores de clases\\
+
+function Route(ruta: string) {
+    return (constructor: Function) => {
+        console.log('Ejecutando el decorador de ruta');
+        constructor.prototype.route = ruta
+    }
+}
+
+@Route('/productos')
+class Productos {
+    find() {
+        return "producto"
+    }
+}
