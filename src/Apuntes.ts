@@ -360,8 +360,9 @@ print({ id: "user_id" })
 //}
 
 //Decoradores en TypeScript\\
+//Recordatorio: Los decoradores se encuentran en fase experimental y el uso de estos podria cambiar con el paso del tiempo
 //Los decoradores nos permiten alterar dinámicamente la funcionalidad o añadir nuevas responsabilidades a un objeto a nivel de clase, propiedad, 
-//método o parámetro 
+//método o parámetro (cada decorador tiene su uso y su forma de usarse)
 //Decoradores de clases\\
 
 function Route(ruta: string) {
@@ -377,3 +378,7 @@ class Productos {
         return "producto"
     }
 }
+
+//Si te fijas en la parte superior podemos ver como invocamos con un @ un decorador y lo seguimos con el nombre del decorador pero antes de invocarlo creamos el decorador
+//que es como si fuese una funcion 
+
